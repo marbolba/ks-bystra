@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const HelloLabel = styled("span")`
-  color: red;
+  color: ${({ theme }) => theme.palette.primary};
 `;
 
 export default { HelloLabel };
