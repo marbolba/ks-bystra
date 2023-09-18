@@ -1,13 +1,16 @@
-import LightTheme from "@/theme";
+import LightTheme from "@/theme/LightTheme";
 import GlobalStyles from "./GlobalStyles/GlobalStyles";
 import Home from "@/pages/Home/Home";
+import FontThemeProvider from "@/features/FontThemeProvider/FontThemeProvider";
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <LightTheme>
-        <Home />
+        <FontThemeProvider>
+          <Home />
+        </FontThemeProvider>
       </LightTheme>
     </>
   );
