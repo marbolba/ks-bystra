@@ -10,6 +10,7 @@ declare module "@emotion/react" {
     };
     palette: {
       primary: string;
+      textBlack: string;
       contrastText: string;
     };
     gradient: {

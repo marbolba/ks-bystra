@@ -24,6 +24,10 @@ const globalCss = css`
     text-decoration: none;
   }
 
+  p {
+    margin: 0;
+  }
+
   #root {
     width: 100%;
     height: 100vh;
