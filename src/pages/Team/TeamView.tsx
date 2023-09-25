@@ -42,11 +42,13 @@ const SECTIONS = [
 
 const TeamView = () => {
   return (
-    <S.SectionsWrapper>
-      {SECTIONS.map(({ title, description, action }) => (
-        <Section title={title} description={description} action={action} />
-      ))}
-    </S.SectionsWrapper>
+    <S.ViewWrapper>
+      <S.SectionsWrapper>
+        {SECTIONS.map(({ title, description, action }) => (
+          <Section title={title} description={description} action={action} />
+        ))}
+      </S.SectionsWrapper>
+    </S.ViewWrapper>
   );
 };
 
