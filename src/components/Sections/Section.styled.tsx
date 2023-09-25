@@ -6,12 +6,35 @@ const SectionWrapper = styled.div`
   padding: 24px;
 
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   align-items: center;
   gap: 12px;
   border: 1px solid ${({ theme }) => theme.palette.primary};
+
+  border-radius: 4px;
+  box-shadow: 2px 4px 16px 0px rgba(5, 45, 117, 0.1);
+
+  &:hover {
+    box-shadow: 2px 4px 16px 0px rgba(5, 45, 117, 0.1);
+  }
+
+  &:before {
+    content: "";
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.25;
+
+    background-image: url("src/assets/images/Sections.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+  }
 `;
 
 const Title = styled.p`
@@ -31,6 +54,13 @@ const Description = styled.p`
   letter-spacing: 0.035px;
   color: ${({ theme }) => theme.palette.textBlack};
 `;
+
+const ActionButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 const ActionButton = styled.p`
   font-size: 20px;
   font-weight: 500;
@@ -38,4 +68,10 @@ const ActionButton = styled.p`
   color: ${({ theme }) => theme.palette.primary};
 `;
 
-export default { SectionWrapper, Title, Description, ActionButton };
+export default {
+  SectionWrapper,
+  Title,
+  Description,
+  ActionButtonWrapper,
+  ActionButton,
+};
