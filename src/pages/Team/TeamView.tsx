@@ -1,4 +1,4 @@
-import Section from "@/components/Sections/Section";
+import SportSection from "@/components/SportSection/SportSection";
 import S from "./TeamView.styled";
 
 const SECTIONS = [
@@ -45,7 +45,11 @@ const TeamView = () => {
     <S.ViewWrapper>
       <S.SectionsWrapper>
         {SECTIONS.map(({ title, description, action }) => (
-          <Section title={title} description={description} action={action} />
+          <SportSection
+            title={title}
+            description={description}
+            action={action}
+          />
         ))}
       </S.SectionsWrapper>
     </S.ViewWrapper>

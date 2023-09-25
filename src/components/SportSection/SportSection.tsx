@@ -1,5 +1,5 @@
 import { useState } from "react";
-import S from "./Section.styled";
+import S from "./SportSection.styled";
 
 type Props = {
   title: string;
@@ -7,11 +7,11 @@ type Props = {
   action: string;
 };
 
-const Section = ({ title, description, action }: Props) => {
+const SportSection = ({ title, description, action }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   isHovered;
   return (
-    <S.SectionWrapper
+    <S.SportSectionWrapper
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -26,8 +26,8 @@ const Section = ({ title, description, action }: Props) => {
       ) : (
         <S.Title>{title}</S.Title>
       )}
-    </S.SectionWrapper>
+    </S.SportSectionWrapper>
   );
 };
 
-export default Section;
+export default SportSection;
