@@ -12,6 +12,11 @@ declare module "@emotion/react" {
       primary: string;
       textBlack: string;
       contrastText: string;
+
+      others1: string;
+      others2: string;
+      neutrals1: string;
+      neutrals2: string;
     };
     gradient: {
       blue: string;
