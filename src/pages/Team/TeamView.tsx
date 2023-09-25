@@ -1,5 +1,7 @@
 import SportSection from "@/components/SportSection/SportSection";
 import S from "./TeamView.styled";
+import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
+import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
 
 const SECTIONS = [
   {
@@ -52,6 +54,9 @@ const TeamView = () => {
           />
         ))}
       </S.SectionsWrapper>
+      <LargeGapSection>
+        <LabelWithBackgroundPattern label="Dołącz do nas" />
+      </LargeGapSection>
     </S.ViewWrapper>
   );
 };

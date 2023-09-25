@@ -22,6 +22,11 @@ const LightTheme = ({ children }: Props) => {
       primary: "#052D75",
       textBlack: "#031639",
       contrastText: COLOR.WHITE,
+
+      others1: "#EF1429",
+      others2: "#B79751",
+      neutrals1: "#000",
+      neutrals2: "#fff",
     },
     gradient: {
       blue: "linear-gradient(180deg, #1648A3 0%, #052D75 100%)",
