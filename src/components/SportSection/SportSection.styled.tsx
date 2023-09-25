@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const SectionWrapper = styled.div`
+const SportSectionWrapper = styled.div`
   width: 400px;
   height: 290px;
   padding: 24px;
@@ -69,7 +69,7 @@ const ActionButton = styled.p`
 `;
 
 export default {
-  SectionWrapper,
+  SportSectionWrapper,
   Title,
   Description,
   ActionButtonWrapper,
