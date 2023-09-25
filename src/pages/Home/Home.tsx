@@ -4,10 +4,12 @@ import S from "./Home.styled";
 
 const Home = () => {
   return (
-    <S.PageWrapper>
-      <Header />
-      <TeamView />
-    </S.PageWrapper>
+    <S.GlobalBackground>
+      <S.PageWrapper>
+        <Header />
+        <TeamView />
+      </S.PageWrapper>
+    </S.GlobalBackground>
   );
 };
 
