@@ -1,3 +1,4 @@
+import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
 import { TextField } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const FormStep1 = ({ name, surname, birthDate, onChangeHandler }: Props) => (
-  <>
+  <SmallGapSection>
     <TextField
       label="Imię"
       name="name"
@@ -21,7 +22,6 @@ const FormStep1 = ({ name, surname, birthDate, onChangeHandler }: Props) => (
       variant="outlined"
       color="secondary"
       type="text"
-      fullWidth
       value={name}
       //   error={emailError}
     />
@@ -45,13 +45,13 @@ const FormStep1 = ({ name, surname, birthDate, onChangeHandler }: Props) => (
           onChangeHandler({
             target: {
               name: "birthDate",
-              value: selectedDate,
+              value: selectedDate?.toISOString(),
             },
           } as unknown as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
         }
       />
     </LocalizationProvider>
-  </>
+  </SmallGapSection>
 );
 
 export default FormStep1;
