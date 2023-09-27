@@ -98,7 +98,7 @@ const SectionApplyForm = () => {
         </S.ConsentWrapper>
       )}
 
-      {activeStep <= STEPS.length ? (
+      {activeStep < STEPS.length ? (
         <Button
           variant="outlined"
           color="secondary"

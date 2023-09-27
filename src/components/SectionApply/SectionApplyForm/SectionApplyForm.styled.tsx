@@ -6,7 +6,7 @@ const StyledStepper = styled(Stepper)`
 `;
 
 const StyledForm = styled("form")`
-  width: 408px;
+  width: 224px;
 `;
 
 const ConsentWrapper = styled("div")`
