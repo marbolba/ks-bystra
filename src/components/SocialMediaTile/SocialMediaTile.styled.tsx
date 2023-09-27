@@ -1,7 +1,7 @@
 import { COLOR } from "@/theme/colors";
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
-const IconWrapper = styled.div`
+const IconWrapper = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;

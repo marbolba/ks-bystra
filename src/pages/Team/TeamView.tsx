@@ -2,6 +2,8 @@ import SportSection from "@/components/SportSection/SportSection";
 import S from "./TeamView.styled";
 import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
 import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
+import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
+import SectionApplyForm from "@/components/SectionApplyForm/SectionApplyForm";
 
 const SECTIONS = [
   {
@@ -45,17 +47,21 @@ const SECTIONS = [
 const TeamView = () => {
   return (
     <S.ViewWrapper>
-      <S.SectionsWrapper>
-        {SECTIONS.map(({ title, description, action }) => (
-          <SportSection
-            title={title}
-            description={description}
-            action={action}
-          />
-        ))}
-      </S.SectionsWrapper>
       <LargeGapSection>
-        <LabelWithBackgroundPattern label="Dołącz do nas" />
+        <S.SectionsWrapper>
+          {SECTIONS.map(({ title, description, action }, idx) => (
+            <SportSection
+              title={title}
+              description={description}
+              action={action}
+              key={idx}
+            />
+          ))}
+        </S.SectionsWrapper>
+        <SmallGapSection>
+          <LabelWithBackgroundPattern label="Dołącz do nas" />
+          <SectionApplyForm />
+        </SmallGapSection>
       </LargeGapSection>
     </S.ViewWrapper>
   );

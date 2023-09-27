@@ -1,7 +1,7 @@
 import { COLOR } from "@/theme/colors";
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
-const GlobalBackground = styled.div`
+const GlobalBackground = styled("div")`
   width: 100%;
   height: 100%;
   background-color: ${COLOR.WHITE};
@@ -9,7 +9,7 @@ const GlobalBackground = styled.div`
   justify-content: center;
 `;
 
-const PageWrapper = styled.div`
+const PageWrapper = styled("div")`
   width: 100%;
   height: 100%;
   max-width: 1440px;
