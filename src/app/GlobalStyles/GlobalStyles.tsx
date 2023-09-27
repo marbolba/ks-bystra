@@ -30,7 +30,7 @@ const globalCss = css`
 
   #root {
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
 
   @font-face {

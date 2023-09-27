@@ -3,7 +3,7 @@ import S from "./TeamView.styled";
 import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
 import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
 import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
-import SectionApplyForm from "@/components/SectionApplyForm/SectionApplyForm";
+import SectionApply from "@/components/SectionApply/SectionApply";
 
 const SECTIONS = [
   {
@@ -60,7 +60,7 @@ const TeamView = () => {
         </S.SectionsWrapper>
         <SmallGapSection>
           <LabelWithBackgroundPattern label="Dołącz do nas" />
-          <SectionApplyForm />
+          <SectionApply />
         </SmallGapSection>
       </LargeGapSection>
     </S.ViewWrapper>

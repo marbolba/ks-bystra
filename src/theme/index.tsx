@@ -4,28 +4,38 @@ import {
   createTheme,
 } from "@mui/material/styles";
 import typography from "./typography";
+import componentOverrides from "./componentOverrides";
+import { plPL } from "@mui/x-date-pickers/locales";
 
 type Props = {
   children: ReactNode;
 };
 
 export default function ThemeProvider({ children }: Props) {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#052D75",
-      },
-      text: {
-        primary: "#fff",
-        secondary: "#000",
-        disabled: "#f0f",
-      },
+  const theme = createTheme(
+    {
+      palette: {
+        primary: {
+          main: "#052D75",
+        },
+        text: {
+          primary: "#000",
+          secondary: "#050",
+          disabled: "#500",
+        },
+        background: {
+          default: "linear-gradient(180deg, #FDFEFF 0%, #F6FAFF 100%)",
+          paper: "#fff",
+        },
 
-      // ...{ gradient: "linear-gradient(180deg, #1648A3 0%, #052D75 100%)" },
-      // activeBlue: "linear-gradient(180deg, #2B65CC 0%, #133C86 100%)",
+        // ...{ gradient: "linear-gradient(180deg, #1648A3 0%, #052D75 100%)" },
+        // activeBlue: "linear-gradient(180deg, #2B65CC 0%, #133C86 100%)",
+      },
+      typography,
+      ...componentOverrides,
     },
-    typography,
-  });
+    plPL
+  );
 
   return <MUIThemeProvider theme={theme}>{children}</MUIThemeProvider>;
 }
