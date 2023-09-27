@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled("div")`
   position: relative;
   z-index: 1;
 `;
 
-const TextBackgroundPatternWrapper = styled.div`
+const TextBackgroundPatternWrapper = styled("div")`
   position: absolute;
   height: max-content;
   top: 0;
@@ -15,7 +15,7 @@ const TextBackgroundPatternWrapper = styled.div`
   z-index: 0;
 `;
 
-const Label = styled.div`
+const Label = styled("div")`
   position: relative;
   color: #b79751;
   font-size: 48px;

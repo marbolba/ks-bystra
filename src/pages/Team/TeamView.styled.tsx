@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
-const ViewWrapper = styled.div`
+const ViewWrapper = styled("div")`
   padding: 120px 80px;
 `;
 
-const SectionsWrapper = styled.div`
+const SectionsWrapper = styled("div")`
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
