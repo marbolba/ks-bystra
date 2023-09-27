@@ -19,9 +19,9 @@ const YouTubeIcon = () => (
         y2="19.8393"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0" />
-        <stop offset="0.0001" stop-color="white" />
-        <stop offset="1" stop-color="#F7FAFF" />
+        <stop stopColor="white" stopOpacity="0" />
+        <stop offset="0.0001" stopColor="white" />
+        <stop offset="1" stopColor="#F7FAFF" />
       </linearGradient>
     </defs>
   </svg>

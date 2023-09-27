@@ -3,6 +3,7 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
   ],
@@ -11,5 +12,7 @@ module.exports = {
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
   },
 };
