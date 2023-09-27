@@ -23,7 +23,6 @@ const FormStep1 = ({ name, surname, birthDate, onChangeHandler }: Props) => (
       color="secondary"
       type="text"
       value={name}
-      //   error={emailError}
     />
     <TextField
       label="Nazwisko"
@@ -34,7 +33,6 @@ const FormStep1 = ({ name, surname, birthDate, onChangeHandler }: Props) => (
       color="secondary"
       type="text"
       value={surname}
-      // error={passwordError}
       fullWidth
     />
     <LocalizationProvider dateAdapter={AdapterDayjs}>
