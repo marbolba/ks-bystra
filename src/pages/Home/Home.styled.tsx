@@ -1,5 +1,6 @@
 import { COLOR } from "@/theme/colors";
 import styled from "@emotion/styled";
+
 const GlobalBackground = styled.div`
   width: 100%;
   height: 100%;
