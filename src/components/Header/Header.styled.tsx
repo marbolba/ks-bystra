@@ -26,7 +26,7 @@ const PageTitle = styled(Typography)`
   font-weight: 400;
   line-height: 48px;
   letter-spacing: 0.085px;
-  color: ${({ theme }) => theme.palette.text.primary};
+  color: ${({ theme }) => theme.palette.text.secondary};
 `;
 
 const SocialMediaWrapper = styled("div")`
