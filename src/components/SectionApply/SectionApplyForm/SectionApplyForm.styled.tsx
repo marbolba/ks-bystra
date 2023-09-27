@@ -9,7 +9,15 @@ const StyledForm = styled("form")`
   width: 408px;
 `;
 
+const ConsentWrapper = styled("div")`
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+`;
+
 export default {
   Stepper: StyledStepper,
   Form: StyledForm,
+  ConsentWrapper,
 };
