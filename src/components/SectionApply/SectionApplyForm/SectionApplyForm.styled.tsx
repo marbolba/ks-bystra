@@ -3,6 +3,14 @@ import { Stepper } from "@mui/material";
 
 const StyledStepper = styled(Stepper)`
   width: 600px;
+
+  .MuiSvgIcon-root.Mui-active {
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid #1976d2;
+    font-size: 31px;
+    margin-block: -4px;
+  }
 `;
 
 const StyledForm = styled("form")`
