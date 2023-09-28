@@ -29,14 +29,8 @@ const PageTitle = styled(Typography)`
   color: ${({ theme }) => theme.palette.text.secondary};
 `;
 
-const SocialMediaWrapper = styled("div")`
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-`;
-const SocialMediaHorizontalWrapper = styled("div")`
-  display: flex;
-  gap: 16px;
+const SocialMediasContainer = styled("div")`
+  width: 130px;
 `;
 
 export default {
@@ -44,6 +38,5 @@ export default {
   BrandingWrapper,
   PageTitleWrapper,
   PageTitle,
-  SocialMediaWrapper,
-  SocialMediaHorizontalWrapper,
+  SocialMediasContainer,
 };
