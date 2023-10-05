@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import TeamView from "../Team/TeamView";
+import Landing from "../Landing/Landing";
 import S from "./Home.styled";
 import Footer from "@/components/Footer/Footer";
 
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <S.PageWrapper>
       <Header />
-      <TeamView />
+      <Landing />
       <Footer />
     </S.PageWrapper>
   );

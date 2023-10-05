@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import SectionCard from "@/components/SectionCard/SectionCard";
-import S from "./TeamView.styled";
+import S from "./Landing.styled";
 import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
 import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
 import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
@@ -48,7 +48,7 @@ const SECTIONS = [
   },
 ];
 
-const TeamView = () => {
+const Landing = () => {
   return (
     <S.ViewWrapper>
       <LargeGapSection>
@@ -87,4 +87,4 @@ const TeamView = () => {
   );
 };
 
-export default TeamView;
+export default Landing;
