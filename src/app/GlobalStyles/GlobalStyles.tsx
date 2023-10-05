@@ -41,8 +41,20 @@ const globalCss = css`
 
   @font-face {
     font-family: "Montserrat";
-    src: url(${MontserratMediumTtf}) format("woff2");
+    src: url(${MontserratRegularTtf}) format("truetype");
     font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url(${MontserratMediumTtf}) format("truetype");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url(${MontserratMediumTtf}) format("truetype");
+    font-weight: 700;
   }
 `;
 

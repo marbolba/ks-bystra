@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const Header = styled("div")`
@@ -21,14 +20,6 @@ const PageTitleWrapper = styled("div")`
   flex-direction: column;
 `;
 
-const PageTitle = styled(Typography)`
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0.085px;
-  color: ${({ theme }) => theme.palette.text.secondary};
-`;
-
 const SocialMediasContainer = styled("div")`
   width: 130px;
 `;
@@ -37,6 +28,5 @@ export default {
   Header,
   BrandingWrapper,
   PageTitleWrapper,
-  PageTitle,
   SocialMediasContainer,
 };
