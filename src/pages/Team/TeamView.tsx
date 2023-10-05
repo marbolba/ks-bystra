@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import SportSection from "@/components/SportSection/SportSection";
+import SectionCard from "@/components/SectionCard/SectionCard";
 import S from "./TeamView.styled";
 import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
 import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
@@ -54,7 +54,7 @@ const TeamView = () => {
       <LargeGapSection>
         <S.SectionsWrapper>
           {SECTIONS.map(({ title, description, action }, idx) => (
-            <SportSection
+            <SectionCard
               title={title}
               description={description}
               action={action}

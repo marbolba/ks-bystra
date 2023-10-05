@@ -1,5 +1,5 @@
 import { useState } from "react";
-import S from "./SportSection.styled";
+import S from "./SectionCard.styled";
 
 type Props = {
   title: string;
@@ -7,7 +7,7 @@ type Props = {
   action: string;
 };
 
-const SportSection = ({ title, description, action }: Props) => {
+const SectionCard = ({ title, description, action }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   isHovered;
   return (
@@ -30,4 +30,4 @@ const SportSection = ({ title, description, action }: Props) => {
   );
 };
 
-export default SportSection;
+export default SectionCard;
