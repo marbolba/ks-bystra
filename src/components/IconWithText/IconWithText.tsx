@@ -4,7 +4,7 @@ import S from "./IconWithText.styled";
 type Props = {
   icon: React.ReactNode;
   text: string;
-  color: string;
+  color?: string;
 };
 
 const IconWithText = ({ icon, text, color }: Props) => (

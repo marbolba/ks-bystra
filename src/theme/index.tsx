@@ -16,6 +16,7 @@ export default function ThemeProvider({ children }: Props) {
     {
       palette: {
         primary: {
+          dark: "#1E335E",
           main: "#052D75",
           light: "#EEF2F9",
         },

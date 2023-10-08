@@ -15,7 +15,7 @@ const Footer = () => {
       <SmallGapSection>
         <S.ContactDetailsWrapper>
           <S.AddressAndContactWrapper>
-            <Typography variant="h6" color={theme.palette.common.white}>
+            <Typography variant="h4" color={theme.palette.common.white}>
               Klub Sportowy Bystra
             </Typography>
             <Typography variant="body1" color={theme.palette.common.white}>
