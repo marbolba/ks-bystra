@@ -6,7 +6,6 @@ import {
 import typography from "./typography";
 import componentOverrides from "./componentOverrides";
 import { plPL } from "@mui/x-date-pickers/locales";
-
 type Props = {
   children: ReactNode;
 };
