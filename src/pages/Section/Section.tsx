@@ -26,14 +26,18 @@ const SECTION_LABELS: SectionLabels = {
   },
 };
 
-const Section = () => {
+type Props = {
+  name: string;
+};
+
+const Section = ({ name }: Props) => {
   const theme = useTheme();
 
   return (
     <S.ViewWrapper>
       <LargeGapSection>
         <Typography variant="h2" color={theme.palette.secondary.main}>
-          {SECTION_LABELS.title}
+          {name}
         </Typography>
 
         <SmallGapSection>
