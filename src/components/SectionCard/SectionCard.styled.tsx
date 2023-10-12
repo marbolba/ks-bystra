@@ -2,8 +2,8 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const SportSectionWrapper = styled("div")`
-  width: 400px;
-  height: 290px;
+  width: 399px;
+  height: 282px;
   padding: 24px;
 
   display: flex;
@@ -32,7 +32,6 @@ const SportSectionWrapper = styled("div")`
     opacity: 0.25;
 
     background-image: url("images/Sections.png");
-    background-size: cover;
     background-position: center;
     position: absolute;
   }

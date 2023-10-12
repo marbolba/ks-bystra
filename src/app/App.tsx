@@ -6,6 +6,17 @@ import { CssBaseline } from "@mui/material";
 import Section from "@/pages/Section/Section";
 
 function App() {
+  const SECTIONS = [
+    {
+      path: "/handball",
+      title: "PILKA RECZNA",
+    },
+    {
+      path: "/girls-academy",
+      title: "Girls Academy",
+    },
+  ];
+
   return (
     <>
       <GlobalStyles />
@@ -14,19 +25,17 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route
-                path="/handball"
-                element={<Section name="Pilka reczna dziewczyn" />}
-              />
-              <Route
-                path="/girls-academy"
-                element={<Section name="Girls Academy" />}
-              />
+
+              {SECTIONS.map(({ path, title }, idx) => (
+                <Route
+                  key={idx}
+                  path={path}
+                  element={<Section name={title} />}
+                />
+              ))}
             </Routes>
           </BrowserRouter>
         </CssBaseline>
-
-        {/* <Home /> */}
       </ThemeProvider>
     </>
   );
