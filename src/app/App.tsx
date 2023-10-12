@@ -5,8 +5,6 @@ import ThemeProvider from "@/theme";
 import { CssBaseline } from "@mui/material";
 import Section from "@/pages/Section/Section";
 
-// googleMapsApiToken = 'AIzaSyATZGUSMxlLxVaN0khB8HgbULn51VjD39g'
-
 function App() {
   return (
     <>
