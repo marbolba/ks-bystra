@@ -39,7 +39,7 @@ const SectionContact = ({ labels }: Props) => {
         />
       </S.AddressAndContactWrapper>
       <S.CoachContainer>
-        <img src="public/images/coach1.png" />
+        <img src="images/coach1.png" />
         <Typography variant="body1" color={theme.palette.primary.dark}>
           Imię i nazwisko trenera
         </Typography>
