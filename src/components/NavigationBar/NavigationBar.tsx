@@ -10,23 +10,23 @@ const NAV_ITEMS = [
   },
   {
     label: "Dołącz do nas ",
-    link: "/handball#JoinUs",
+    link: "#JoinUs",
   },
   {
     label: "zostań patronem",
-    link: "/handball",
+    link: "#patron",
   },
   {
     label: "kontakt",
-    link: "/handball",
+    link: "#contact",
   },
   {
     label: "lokalizacja",
-    link: "/handball",
+    link: "#location",
   },
   {
     label: "sklep",
-    link: "/handball",
+    link: "/shop",
   },
 ];
 
@@ -46,6 +46,7 @@ const NavigationBar = () => {
         <S.ItemContainer
           isActive={idx === activeIdx}
           onClick={() => onClickHandler(idx)}
+          key={idx}
         >
           <Typography variant="button" paragraph marginBottom={0}>
             {item.label}

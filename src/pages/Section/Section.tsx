@@ -11,38 +11,29 @@ import SectionContact, {
 } from "@/components/SectionContact/SectionContact";
 import PatronsSlider from "@/features/PatronsSlider/PatronsSlider";
 
-type SectionLabels = {
+export type SectionLabels = {
   title: string;
   contact: SectionContactLabels;
-};
-
-const SECTION_LABELS: SectionLabels = {
-  title: "Akademia Piłki Ręcznej",
-  contact: {
-    name: "Treningi Piłki ręcznej",
-    address: "ul. Sportowa 1, 00-001 Warszawa",
-    phone: "123 456 789",
-    email: "biuro@ksbbystra.pl",
-  },
+  aboutUs: string;
+  becomePatron: string;
 };
 
 type Props = {
-  name: string;
+  labels: SectionLabels;
 };
-
-const Section = ({ name }: Props) => {
+const Section = ({ labels }: Props) => {
   const theme = useTheme();
 
   return (
     <S.ViewWrapper>
       <LargeGapSection>
         <Typography variant="h2" color={theme.palette.secondary.main}>
-          {name}
+          {labels.title}
         </Typography>
 
         <SmallGapSection>
           <LabelWithBackgroundPattern label="O nas" />
-          <Typography variant="body1">{LOREM_IPSUM}</Typography>
+          <Typography variant="body1">{labels.aboutUs}</Typography>
         </SmallGapSection>
 
         <SmallGapSection>
@@ -52,7 +43,7 @@ const Section = ({ name }: Props) => {
 
         <SmallGapSection>
           <LabelWithBackgroundPattern label="Kontakt" />
-          <SectionContact labels={SECTION_LABELS.contact} />
+          <SectionContact labels={labels.contact} />
         </SmallGapSection>
 
         <SmallGapSection>
