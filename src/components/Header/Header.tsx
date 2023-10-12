@@ -3,15 +3,23 @@ import S from "./Header.styled";
 import MainSponsor from "@/assets/images/MainSponsor";
 import { LABELS } from "@/assets/labels/labels";
 import SocialMedias from "../SocialMedias/SocialMedias";
+import { useTheme } from "@mui/material/styles";
+import { Typography } from "@mui/material";
 
 const Header = () => {
+  const theme = useTheme();
+
   return (
     <S.Header>
       <S.BrandingWrapper>
         <KsBystraLogo />
         <S.PageTitleWrapper>
-          <S.PageTitle>{LABELS.pageTitleLine1}</S.PageTitle>
-          <S.PageTitle>{LABELS.pageTitleLine2}</S.PageTitle>
+          <Typography variant="h3" color={theme.palette.common.white}>
+            {LABELS.pageTitleLine1}
+          </Typography>
+          <Typography variant="h3" color={theme.palette.common.white}>
+            {LABELS.pageTitleLine2}
+          </Typography>
         </S.PageTitleWrapper>
       </S.BrandingWrapper>
       <MainSponsor />

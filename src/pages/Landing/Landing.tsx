@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
-import SportSection from "@/components/SportSection/SportSection";
-import S from "./TeamView.styled";
+import SectionCard from "@/components/SectionCard/SectionCard";
+import S from "./Landing.styled";
 import LargeGapSection from "@/components/LargeGapSection/LargeGapSection";
 import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/LabelWithBackgroundPattern";
 import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
 import SectionApply from "@/components/SectionApply/SectionApply";
 import { Typography } from "@mui/material";
 import { LOREM_IPSUM } from "@/assets/labels/loremIpsum";
-import PatronSlider from "@/components/PatronSlider/PatronSlider";
+import PatronsSlider from "@/features/PatronsSlider/PatronsSlider";
 
 const SECTIONS = [
   {
@@ -48,13 +48,13 @@ const SECTIONS = [
   },
 ];
 
-const TeamView = () => {
+const Landing = () => {
   return (
     <S.ViewWrapper>
       <LargeGapSection>
         <S.SectionsWrapper>
           {SECTIONS.map(({ title, description, action }, idx) => (
-            <SportSection
+            <SectionCard
               title={title}
               description={description}
               action={action}
@@ -72,19 +72,11 @@ const TeamView = () => {
         <SmallGapSection>
           <LabelWithBackgroundPattern label="Zostań patronem" />
           <Typography variant="body1">{LOREM_IPSUM}</Typography>
-          <PatronSlider
-            patronsImages={[
-              <img src="src/assets/images/sponsor1.png"></img>,
-              <img src="src/assets/images/sponsor2.png"></img>,
-              <img src="src/assets/images/sponsor3.png"></img>,
-              <img src="src/assets/images/sponsor4.png"></img>,
-              <img src="src/assets/images/sponsor5.png"></img>,
-            ]}
-          ></PatronSlider>
+          <PatronsSlider />
         </SmallGapSection>
       </LargeGapSection>
     </S.ViewWrapper>
   );
 };
 
-export default TeamView;
+export default Landing;
