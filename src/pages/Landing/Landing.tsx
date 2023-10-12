@@ -11,7 +11,7 @@ import PatronsSlider from "@/features/PatronsSlider/PatronsSlider";
 
 const SECTIONS = [
   {
-    title: "PILKA RECZNA",
+    title: "Girls Academy",
     description:
       "Jesteśmy najsilniejszym ośrodkiem piłki ręcznej w regionie, a nasza praca poparta została licznymi sukcesami – z zaszczytem powołań do kadr narodowych w piłce ręcznej dla zawodniczek sesji na czele.",
     action: "czytaj dalej>",
