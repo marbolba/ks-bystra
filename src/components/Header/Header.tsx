@@ -1,6 +1,6 @@
-import KsBystraLogo from "@/assets/images/KsBystraLogo";
+import KsBystraLogo from "@/assets/icons/KsBystraLogo";
 import S from "./Header.styled";
-import MainSponsor from "@/assets/images/MainSponsor";
+import MainSponsor from "@/assets/icons/MainSponsor";
 import { LABELS } from "@/assets/labels/labels";
 import SocialMedias from "../SocialMedias/SocialMedias";
 import { useTheme } from "@mui/material/styles";

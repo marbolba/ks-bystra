@@ -31,7 +31,7 @@ const SportSectionWrapper = styled("div")`
     bottom: 0px;
     opacity: 0.25;
 
-    background-image: url("src/assets/images/Sections.png");
+    background-image: url("public/images/Sections.png");
     background-size: cover;
     background-position: center;
     position: absolute;

@@ -1,8 +1,8 @@
 import { Global, css } from "@emotion/react";
 
 // fonts
-import MontserratRegularTtf from "@/assets/fonts/Montserrat-Regular.ttf";
-import MontserratMediumTtf from "@/assets/fonts/Montserrat-Medium.ttf";
+import MontserratRegularTtf from "../../../public/fonts/Montserrat-Regular.ttf";
+import MontserratMediumTtf from "../../../public/fonts/Montserrat-Medium.ttf";
 
 const globalCss = css`
   html {
