@@ -12,6 +12,7 @@ const SportSectionWrapper = styled("div")`
   align-items: center;
   position: relative;
 
+  cursor: pointer;
   align-items: center;
   gap: 12px;
   border: 1px solid ${({ theme }) => theme.palette.primary.main};
