@@ -1,6 +1,8 @@
 import { useCallback, useMemo } from "react";
 import sectionsFile from "@/assets/templates/sections.json";
 import { SectionData } from "@/pages/Section/Section";
+import { FooterData } from "@/components/Footer/Footer";
+import { LandingData } from "@/pages/Landing/Landing";
 
 const useJsonTemplates = () => {
   const loadJson = (obj: any) => JSON.parse(JSON.stringify(obj));
@@ -11,11 +13,16 @@ const useJsonTemplates = () => {
   );
 
   const fetchLandingData = useMemo(
-    async () =>
+    async (): Promise<LandingData> =>
       (await loadJson(await import("@/assets/templates/landing.json"))).default,
     []
   );
-  //   add later react-hooks/exhaustive-deps
+
+  const fetchFooterData = useMemo(
+    async (): Promise<FooterData> =>
+      (await loadJson(await import("@/assets/templates/footer.json"))).default,
+    []
+  );
 
   const fetchAndParseSectionData = useCallback(
     async (sectionName: string): Promise<SectionData> => {
@@ -27,7 +34,12 @@ const useJsonTemplates = () => {
     []
   );
 
-  return { fetchSectionsList, fetchLandingData, fetchAndParseSectionData };
+  return {
+    fetchSectionsList,
+    fetchLandingData,
+    fetchFooterData,
+    fetchAndParseSectionData,
+  };
 };
 
 export default useJsonTemplates;

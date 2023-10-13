@@ -6,9 +6,42 @@ import TelephoneIcon from "@/assets/icons/TelephoneIcon";
 import EmailIcon from "@/assets/icons/EmailIcon";
 import SocialMedias from "../SocialMedias/SocialMedias";
 import { useTheme } from "@mui/material/styles";
+import useJsonTemplates from "@/hooks/useJsonTemplates";
+import { useCallback, useEffect, useState } from "react";
+import SpinnerScreen from "../SpinnerScreen/SpinnerScreen";
+
+type FooterLabels = {
+  title: string;
+  address: string;
+  phone: string;
+  email: string;
+  copyrightNotice: string;
+};
+
+export type FooterData = {
+  config: {};
+  labels: FooterLabels;
+};
 
 const Footer = () => {
   const theme = useTheme();
+
+  const { fetchFooterData } = useJsonTemplates();
+  const [footerData, setFooterData] = useState<FooterData | null>(null);
+
+  const initializeFooter = useCallback(async () => {
+    const sectionData = await fetchFooterData;
+    setFooterData(sectionData);
+  }, []);
+
+  useEffect(() => {
+    initializeFooter();
+  }, []);
+
+  if (!footerData) {
+    return <SpinnerScreen />;
+  }
+  const { labels } = footerData;
 
   return (
     <S.FooterWrapper>
@@ -16,20 +49,20 @@ const Footer = () => {
         <S.ContactDetailsWrapper>
           <S.AddressAndContactWrapper>
             <Typography variant="h4" color={theme.palette.common.white}>
-              Klub Sportowy Bystra
+              {labels.title}
             </Typography>
             <Typography variant="body1" color={theme.palette.common.white}>
-              ul. Kowalska 1843-360 Bystra
+              {labels.address}
             </Typography>
             <IconWithText
               icon={<TelephoneIcon />}
               color={theme.palette.common.white}
-              text="+48 508 858 590"
+              text={labels.phone}
             />
             <IconWithText
               icon={<EmailIcon />}
               color={theme.palette.common.white}
-              text="biuro@ksbbystra.pl"
+              text={labels.email}
             />
           </S.AddressAndContactWrapper>
           <S.SocialMediasContainer>
@@ -45,8 +78,7 @@ const Footer = () => {
           color={theme.palette.common.white}
           align="center"
         >
-          Oficjalna strona internetowa Klubu Sportowego Bystra.© Wszelkie prawa
-          zastrzeżone.
+          {labels.copyrightNotice}
         </Typography>
       </SmallGapSection>
     </S.FooterWrapper>
