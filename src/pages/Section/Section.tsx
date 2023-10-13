@@ -4,12 +4,13 @@ import LabelWithBackgroundPattern from "@/components/LabelWithBackgroundPattern/
 import SmallGapSection from "@/components/SmallGapSection/SmallGapSection";
 import SectionApply from "@/components/SectionApply/SectionApply";
 import { Typography } from "@mui/material";
-import { LOREM_IPSUM } from "@/assets/labels/loremIpsum";
 import { useTheme } from "@mui/material/styles";
 import SectionContact, {
   SectionContactLabels,
 } from "@/components/SectionContact/SectionContact";
 import PatronsSlider from "@/features/PatronsSlider/PatronsSlider";
+import { useCallback, useEffect, useState } from "react";
+import useJsonTemplates from "@/hooks/useJsonTemplates";
 
 export type SectionLabels = {
   title: string;
@@ -18,11 +19,34 @@ export type SectionLabels = {
   becomePatron: string;
 };
 
-type Props = {
+export type SectionData = {
+  config: {};
   labels: SectionLabels;
+  id: string;
 };
-const Section = ({ labels }: Props) => {
+
+type Props = {
+  id: string;
+};
+
+const Section = ({ id }: Props) => {
   const theme = useTheme();
+  const { fetchAndParseSectionData } = useJsonTemplates();
+  const [sectionData, setSectionData] = useState<SectionData | null>(null);
+
+  const initializeSection = useCallback(async () => {
+    const sectionData = await fetchAndParseSectionData(id);
+    setSectionData(sectionData);
+  }, []);
+
+  useEffect(() => {
+    initializeSection();
+  }, []);
+
+  if (!sectionData) {
+    return null;
+  }
+  const { labels } = sectionData;
 
   return (
     <S.ViewWrapper>
@@ -48,7 +72,7 @@ const Section = ({ labels }: Props) => {
 
         <SmallGapSection>
           <LabelWithBackgroundPattern label="Zostań patronem" />
-          <Typography variant="body1">{LOREM_IPSUM}</Typography>
+          <Typography variant="body1">{labels.becomePatron}</Typography>
           <PatronsSlider />
         </SmallGapSection>
       </LargeGapSection>

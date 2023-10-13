@@ -42,6 +42,7 @@ const Title = styled(Typography)`
   font-weight: 400;
   line-height: 48px;
   letter-spacing: 0.085px;
+  text-align: center;
   background: ${({ theme }) => theme.palette.primary.main};
   background-clip: text;
   -webkit-background-clip: text;

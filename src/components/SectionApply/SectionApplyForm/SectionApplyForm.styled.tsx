@@ -2,8 +2,6 @@ import { styled } from "@mui/material/styles";
 import { Stepper } from "@mui/material";
 
 const StyledStepper = styled(Stepper)`
-  width: 600px;
-
   .MuiSvgIcon-root.Mui-active {
     padding: 3px;
     border-radius: 50%;

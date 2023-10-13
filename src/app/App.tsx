@@ -2,61 +2,44 @@ import GlobalStyles from "./GlobalStyles/GlobalStyles";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import ThemeProvider from "@/theme";
 import { CssBaseline } from "@mui/material";
-import Section, { SectionLabels } from "@/pages/Section/Section";
+import Section from "@/pages/Section/Section";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Landing from "@/pages/Landing/Landing";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
-import sectionsFile from "@/assets/templates/sections.json";
-import { useCallback, useEffect, useMemo, useState } from "react";
-
-type SectionConfig = {
-  theme: {};
-};
-
-type SectionData = { config: SectionConfig; labels: SectionLabels; id: string };
+import { useCallback, useEffect, useState } from "react";
+import useJsonTemplates from "@/hooks/useJsonTemplates";
 
 function App() {
-  const [sectionData, setSectionData] = useState<SectionData[]>([]);
-  const loadJson = (obj: any) => JSON.parse(JSON.stringify(obj));
+  const [sectionsList, setSectionsList] = useState<string[] | null>(null);
+  const { fetchSectionsList } = useJsonTemplates();
 
-  const rawSectionsList = useMemo(
-    () => loadJson(sectionsFile) as string[],
-    [loadJson]
-  );
-
-  const fetchSectionsData = useCallback(async () => {
-    const buildSectionData = async (sectionName: string) => {
-      const data = await loadJson(
-        await import(`@/assets/templates/sections/${sectionName}.json`)
-      ).default;
-      return { ...data, id: sectionName };
-    };
-
-    try {
-      const sectionData = (
-        await Promise.allSettled<SectionLabels>(
-          rawSectionsList.map(buildSectionData)
-        )
-      ).map((r: any) => r.value);
-      setSectionData(sectionData);
-    } catch (e) {
-      console.error("Error reading from json", e);
-    }
-  }, [rawSectionsList, loadJson]);
-
-  useEffect(() => {
-    fetchSectionsData();
+  const initializeRouter = useCallback(async () => {
+    const sectionData = fetchSectionsList;
+    setSectionsList(sectionData);
   }, []);
 
-  if (sectionData.length == 0) {
+  const getSectionsTemplate = useCallback(
+    (sectionsList: string[]) =>
+      sectionsList.map((sectionName: string, idx) => (
+        <Route
+          key={idx}
+          path={sectionName}
+          element={<Section id={sectionName} />}
+        />
+      )),
+    []
+  );
+
+  useEffect(() => {
+    initializeRouter();
+  });
+
+  if (!sectionsList) {
     return null;
   }
 
-  const sections = sectionData.map((sectionData: SectionData) => ({
-    path: sectionData.id,
-    child: <Section labels={sectionData.labels} />,
-  }));
+  const sectionsTemplate = getSectionsTemplate(sectionsList);
 
   // TODO Move away
   const Layout = () => (
@@ -77,9 +60,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route path="/" element={<Landing />} />
-                {sections.map(({ path, child }, idx) => (
-                  <Route key={idx} path={path} element={child} />
-                ))}
+                {sectionsTemplate}
               </Route>
             </Routes>
           </BrowserRouter>

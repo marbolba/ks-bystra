@@ -32,8 +32,7 @@ const NAV_ITEMS = [
 
 const NavigationBar = () => {
   const navigate = useNavigate();
-
-  const activeIdx = 1;
+  const activeIdx = 1; // made active as it's Join Us "exposed" button
 
   const onClickHandler = useCallback(
     (idx: number) => navigate(NAV_ITEMS[idx].link),

@@ -8,6 +8,7 @@ const SectionsWrapper = styled("div")`
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  justify-content: center;
 `;
 
 export default { ViewWrapper, SectionsWrapper };
