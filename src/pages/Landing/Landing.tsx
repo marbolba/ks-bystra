@@ -10,6 +10,7 @@ import { LOREM_IPSUM } from "@/assets/labels/loremIpsum";
 import PatronsSlider from "@/features/PatronsSlider/PatronsSlider";
 import { useCallback, useEffect, useState } from "react";
 import useJsonTemplates from "@/hooks/useJsonTemplates";
+import SpinnerScreen from "@/components/SpinnerScreen/SpinnerScreen";
 
 export type LandingLabels = {
   sectionTiles: {
@@ -42,7 +43,7 @@ const Landing = () => {
   }, []);
 
   if (!landingData) {
-    return null;
+    return <SpinnerScreen />;
   }
 
   const { labels } = landingData;
