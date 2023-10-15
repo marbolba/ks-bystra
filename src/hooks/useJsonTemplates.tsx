@@ -1,38 +1,45 @@
-import { useCallback, useMemo } from "react";
-import sectionsFile from "@/assets/templates/sections.json";
-import { SectionData } from "@/pages/Section/Section";
 import { FooterData } from "@/components/Footer/Footer";
 import { LandingData } from "@/pages/Landing/Landing";
+import { SectionData } from "@/pages/Section/Section";
+import { useCallback } from "react";
+
+const LABELS_HOST_URL =
+  "https://raw.githubusercontent.com/marbolba/ks-bystra-templates/main/labels/";
 
 const useJsonTemplates = () => {
-  const loadJson = (obj: any) => JSON.parse(JSON.stringify(obj));
+  async function fetchData<T>(url: string): Promise<T> {
+    const response = await fetch(`${LABELS_HOST_URL}${url}`);
 
-  const fetchSectionsList = useMemo(
-    () => loadJson(sectionsFile) as string[],
+    if (!response.ok) {
+      throw new Error(`Error: HTTP status ${response.status}`);
+    }
+
+    const data: T = await response.json();
+    return data;
+  }
+
+  // const loadJson = (path: string) =>
+  //   JSON.parse(JSON.stringify(fetchData(path)));
+
+  const fetchSectionsList = useCallback(
+    () => fetchData<string[]>("sections.json"),
     []
   );
 
-  const fetchLandingData = useMemo(
-    async (): Promise<LandingData> =>
-      (await loadJson(await import("@/assets/templates/landing.json"))).default,
+  const fetchLandingData = useCallback(
+    () => fetchData<LandingData>("landing.json"),
     []
   );
 
-  const fetchFooterData = useMemo(
-    async (): Promise<FooterData> =>
-      (await loadJson(await import("@/assets/templates/footer.json"))).default,
+  const fetchFooterData = useCallback(
+    () => fetchData<FooterData>("footer.json"),
     []
   );
 
-  const fetchAndParseSectionData = useCallback(
-    async (sectionName: string): Promise<SectionData> => {
-      const data = await loadJson(
-        await import(`@/assets/templates/sections/${sectionName}.json`)
-      ).default;
-      return { ...data, id: sectionName };
-    },
-    []
-  );
+  const fetchAndParseSectionData = useCallback(async (sectionName: string) => {
+    const data = await fetchData<SectionData>(`sections/${sectionName}.json`);
+    return { ...data, id: sectionName };
+  }, []);
 
   return {
     fetchSectionsList,

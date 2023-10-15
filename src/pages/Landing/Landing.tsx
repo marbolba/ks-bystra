@@ -34,12 +34,14 @@ const Landing = () => {
   const [landingData, setLandingData] = useState<LandingData | null>(null);
 
   const initializeLanding = useCallback(async () => {
-    const landingData = await fetchLandingData;
+    const landingData = await fetchLandingData();
     setLandingData(landingData);
   }, []);
 
   useEffect(() => {
-    initializeLanding();
+    if (!landingData) {
+      initializeLanding();
+    }
   }, []);
 
   if (!landingData) {

@@ -18,7 +18,7 @@ const Routes = () => {
   const { fetchSectionsList } = useJsonTemplates();
 
   const initializeRouter = useCallback(async () => {
-    const sectionData = fetchSectionsList;
+    const sectionData = await fetchSectionsList();
     setSectionsList(sectionData);
   }, []);
 
@@ -35,7 +35,9 @@ const Routes = () => {
   );
 
   useEffect(() => {
-    initializeRouter();
+    if (!sectionsList) {
+      initializeRouter();
+    }
   });
 
   if (!sectionsList) {

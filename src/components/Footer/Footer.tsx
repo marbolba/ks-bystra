@@ -30,12 +30,14 @@ const Footer = () => {
   const [footerData, setFooterData] = useState<FooterData | null>(null);
 
   const initializeFooter = useCallback(async () => {
-    const sectionData = await fetchFooterData;
+    const sectionData = await fetchFooterData();
     setFooterData(sectionData);
   }, []);
 
   useEffect(() => {
-    initializeFooter();
+    if (!footerData) {
+      initializeFooter();
+    }
   }, []);
 
   if (!footerData) {
